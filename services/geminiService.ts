@@ -14,18 +14,22 @@ const getAIClient = () => {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      console.error("CRITICAL: No API key found!");
-      throw new Error("API Key is missing. Please set VITE_GEMINI_API_KEY in your .env.local file.");
+      console.error("❌ CRITICAL: No Gemini API key found!");
+      console.error("Please ensure VITE_GEMINI_API_KEY is set in your .env file");
+      throw new Error(
+        "Gemini API Key is missing. Please add VITE_GEMINI_API_KEY to your .env file. " +
+        "You can get a free API key from https://ai.google.dev/"
+      );
     }
 
-    console.log("AI Service: API key found (length:", apiKey.length, ")");
+    console.log("✅ AI Service: API key found (length:", apiKey.length, ")");
 
     // Initialize with API key
     const ai = new GoogleGenAI({ apiKey });
-    console.log("AI Service: Client initialized successfully");
+    console.log("✅ AI Service: Client initialized successfully");
     return ai;
   } catch (error) {
-    console.error("Failed to initialize AI client:", error);
+    console.error("❌ Failed to initialize AI client:", error);
     throw error;
   }
 };
@@ -112,13 +116,14 @@ Include headings, bullet points, examples, and a brief summary. Keep it under 50
   }
 };
 
-// --- Image Generation (Using placeholder, as image generation requires specific API) ---
+// --- Image Generation ---
 
 export const generateImage = async (prompt: string): Promise<string> => {
   console.log("Image generation requested for:", prompt);
-  // Note: @google/genai may not support image generation directly
-  // Falling back to placeholder service
-  return `https://picsum.photos/seed/${encodeURIComponent(prompt)}/800/450`;
+  // Using Pollinations AI for free, dynamic AI image generation
+  // This service generates images based on text prompts
+  const encodedPrompt = encodeURIComponent(prompt);
+  return `https://image.pollinations.ai/prompt/${encodedPrompt}?width=800&height=450&nologo=true`;
 };
 
 // --- AI Tutor (Chat) ---
