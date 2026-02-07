@@ -1,0 +1,4 @@
+components/Blog.tsx(165,33): error TS2322: Type '{ key: number; post: BlogPost; variant: "dimmed"; isHovered: boolean; onHover: any; }' is not assignable to type 'BlogCardProps'.
+  Property 'key' does not exist on type 'BlogCardProps'.
+components/Blog.tsx(184,33): error TS2322: Type '{ key: number; post: BlogPost; variant: "visible"; isHovered: boolean; onHover: any; }' is not assignable to type 'BlogCardProps'.
+  Property 'key' does not exist on type 'BlogCardProps'.

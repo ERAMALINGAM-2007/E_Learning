@@ -1,0 +1,8 @@
+components/Blog.tsx(165,33): error TS2322: Type '{ key: number; post: BlogPost; variant: "dimmed"; isHovered: boolean; onHover: any; }' is not assignable to type 'BlogCardProps'.
+  Property 'key' does not exist on type 'BlogCardProps'.
+components/Blog.tsx(184,33): error TS2322: Type '{ key: number; post: BlogPost; variant: "visible"; isHovered: boolean; onHover: any; }' is not assignable to type 'BlogCardProps'.
+  Property 'key' does not exist on type 'BlogCardProps'.
+components/TechStackMarquee.tsx(28,47): error TS2322: Type '{ key: string; name: string; }' is not assignable to type '{ name: string; }'.
+  Property 'key' does not exist on type '{ name: string; }'.
+components/TechStackMarquee.tsx(31,47): error TS2322: Type '{ key: string; name: string; }' is not assignable to type '{ name: string; }'.
+  Property 'key' does not exist on type '{ name: string; }'.

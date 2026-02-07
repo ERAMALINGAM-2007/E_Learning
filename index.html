@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cognition AI Learning</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-up': 'floatUp 2.5s ease-out forwards',
+            'pop-in': 'popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+            'fly-bottom': 'flyFromBottom 2.5s ease-out forwards',
+            'fly-top': 'flyFromTop 2.5s ease-out forwards',
+            'fly-left': 'flyFromLeft 2.5s ease-out forwards',
+            'fly-right': 'flyFromRight 2.5s ease-out forwards',
+            'explode': 'explode 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+            'icon-pop': 'iconPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+            'pop-out-up': 'popOutUp 0.6s ease-out forwards',
+            'spin-slow': 'spin 4s linear infinite',
+            'marquee': 'marquee 40s linear infinite',
+            'marquee-reverse': 'marqueeReverse 40s linear infinite',
+            'marquee-vertical': 'marqueeVertical 40s linear infinite',
+            'marquee-vertical-reverse': 'marqueeVerticalReverse 40s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-100%)' },
+            },
+            marqueeReverse: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(0)' },
+            },
+            marqueeVertical: {
+              '0%': { transform: 'translateY(0)' },
+              '100%': { transform: 'translateY(-33.333%)' },
+            },
+            marqueeVerticalReverse: {
+              '0%': { transform: 'translateY(-33.333%)' },
+              '100%': { transform: 'translateY(0)' },
+            },
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' },
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float-up': 'floatUp 2.5s ease-out forwards',
+            'pop-in': 'popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+            'fly-bottom': 'flyFromBottom 2.5s ease-out forwards',
+            'fly-top': 'flyFromTop 2.5s ease-out forwards',
+            'fly-left': 'flyFromLeft 2.5s ease-out forwards',
+            'fly-right': 'flyFromRight 2.5s ease-out forwards',
+            'explode': 'explode 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+            'icon-pop': 'iconPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+            'pop-out-up': 'popOutUp 0.6s ease-out forwards',
+            'spin-slow': 'spin 4s linear infinite',
+            'marquee': 'marquee 40s linear infinite',
+            'marquee-reverse': 'marqueeReverse 40s linear infinite',
+            'blink': 'blink 1s step-end infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    /* Custom scrollbar */
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+
+    .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #475569;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* 3D Flip Utilities */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+
+    .transform-style-3d {
+      transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+
+    /* Base Transitions */
+    body {
+      transition-property: background-color, color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 500ms;
+    }
+
+    div,
+    nav,
+    aside,
+    button,
+    input,
+    textarea,
+    select,
+    span,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    section,
+    header {
+      transition-property: background-color, border-color, color, fill, stroke, shadow, opacity;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 500ms;
+    }
+
+    svg {
+      transition: stroke 500ms cubic-bezier(0.4, 0, 0.2, 1), fill 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* --- View Transition Styles --- */
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+      mix-blend-mode: normal;
+    }
+
+    ::view-transition-new(root) {
+      z-index: 5;
+    }
+
+    ::view-transition-old(root) {
+      z-index: 1;
+    }
+
+    .theme-toggle-icon {
+      view-transition-name: theme-toggle;
+    }
+
+    .theme-toggle-ghost {
+      view-transition-name: theme-toggle-ghost;
+    }
+
+    ::view-transition-group(theme-toggle-ghost) {
+      z-index: 10000;
+      mix-blend-mode: normal;
+      pointer-events: none;
+    }
+
+    ::view-transition-new(theme-toggle-ghost) {
+      animation: none;
+      mix-blend-mode: normal;
+    }
+
+    /* Animations */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(110vh) scale(0.5) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(30vh) scale(1.2) rotate(180deg);
+      }
+
+      70% {
+        transform: translateY(60vh) scale(0.9) rotate(270deg);
+      }
+
+      85% {
+        transform: translateY(45vh) scale(1.05) rotate(320deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(50vh) scale(1) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyFromBottom {
+      0% {
+        transform: translateY(110vh) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-20vh) translateX(100px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyFromTop {
+      0% {
+        transform: translateY(-20vh) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(120vh) translateX(-100px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyFromLeft {
+      0% {
+        transform: translateX(-20vw) translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(120vw) translateY(50px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flyFromRight {
+      0% {
+        transform: translateX(120vw) translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(-20vw) translateY(-50px) rotate(-360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes explode {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+
+      100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.5) rotate(var(--r));
+        opacity: 0;
+      }
+    }
+
+    @keyframes iconPop {
+      0% {
+        transform: scale(0) rotate(-90deg);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.6) rotate(10deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes popOutUp {
+      0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+      }
+
+      40% {
+        transform: translateY(6px) scale(0.9) rotate(-10deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-60px) scale(0.6) rotate(20deg);
+        opacity: 0;
+      }
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+        "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

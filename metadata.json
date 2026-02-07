@@ -1,0 +1,7 @@
+{
+  "name": "Cognition AI Learning - 2",
+  "description": "An AI-powered Learning Management System (LMS) featuring role-based dashboards, AI course generation, Veo video previews, and an intelligent AI tutor.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

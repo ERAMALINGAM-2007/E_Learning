@@ -1,0 +1,4 @@
+components/TechStackMarquee.tsx(28,47): error TS2322: Type '{ key: string; name: string; }' is not assignable to type '{ name: string; }'.
+  Property 'key' does not exist on type '{ name: string; }'.
+components/TechStackMarquee.tsx(31,47): error TS2322: Type '{ key: string; name: string; }' is not assignable to type '{ name: string; }'.
+  Property 'key' does not exist on type '{ name: string; }'.

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "u1",
+    "name": "Sarah Student",
+    "email": "ramu11032007@gmail.com",
+    "password": "1234567",
+    "role": "student",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    "bio": "Passionate learner exploring AI and technology",
+    "xp": 2450,
+    "streak": 7,
+    "enrolledCourseIds": [],
+    "completedLessonIds": [],
+    "achievements": [],
+    "notes": [],
+    "certificates": [],
+    "subscriptionStatus": "active"
+  },
+  {
+    "id": "u2",
+    "name": "Professor Einstein",
+    "email": "instructor@learn.com",
+    "password": "password123",
+    "role": "instructor",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Einstein",
+    "bio": "Dedicated to making complex topics accessible",
+    "xp": 5000,
+    "streak": 30,
+    "enrolledCourseIds": [],
+    "completedLessonIds": [],
+    "achievements": [],
+    "notes": [],
+    "certificates": [],
+    "subscriptionStatus": "active"
+  },
+  {
+    "id": "u1764079781590",
+    "name": "RAM",
+    "email": "eramalingamsrinivasan@gmail.com",
+    "password": "123456",
+    "role": "instructor",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=RAM",
+    "bio": "Dedicated to making complex topics accessible",
+    "xp": 0,
+    "streak": 0,
+    "enrolledCourseIds": [],
+    "completedLessonIds": [],
+    "achievements": [],
+    "notes": [],
+    "certificates": [],
+    "subscriptionStatus": "active"
+  }
+]
